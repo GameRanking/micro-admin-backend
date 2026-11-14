@@ -26,10 +26,6 @@ const createMongoOptions = (configService: ConfigService) => {
             useFactory: (configService: ConfigService) =>
                 createMongoOptions(configService),
         }),
-        MongooseModule.forFeature([
-            { name: 'categories', schema: CategorySchema },
-            { name: 'players', schema: PlayerSchema },
-        ]),
         CategoriesModule,
         PlayersModule,
     ],
