@@ -7,7 +7,7 @@ import {
     Payload,
     RmqContext,
 } from '@nestjs/microservices';
-import type { Category, UpdateCategory } from './interfaces/category.interface';
+import type { Category, UpdateCategory } from './categories/interfaces/category.interface';
 
 // const ackErrors: string[] = ['E11000'];
 

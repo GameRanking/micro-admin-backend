@@ -7,12 +7,12 @@ import {
     Payload,
     Ctx,
 } from '@nestjs/microservices';
-import type { Player } from '../interfaces/player.interface';
+import type { Player } from './interfaces/player.interface';
 import { errorInstance } from '../common/ErrorInstance';
 
 const ackErrors: string[] = ['E11000'];
 
-@Controller('players')
+@Controller()
 export class PlayersController {
     logger = new Logger(PlayersController.name);
     constructor(private readonly playersService: PlayersService) {}
@@ -23,14 +23,14 @@ export class PlayersController {
         const channel = Context.getChannelRef();
         const originalMsg = Context.getMessage();
         try {
-            this.logger.log(`jogador: ${JSON.stringify(player)}`);
+            this.logger.log(`player: ${JSON.stringify(player)}`);
             await this.playersService.createPlayer(player);
             await channel.ack(originalMsg);
         } catch (error) {
             const message = errorInstance(error);
 
             this.logger.log(
-                `error (criar-jogador): ${JSON.stringify(message)}`,
+                `error (create-player): ${JSON.stringify(message)}`,
             );
             const filterAckError = ackErrors.filter((ackError) =>
                 message.includes(ackError),

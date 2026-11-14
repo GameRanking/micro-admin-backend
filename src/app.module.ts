@@ -3,8 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CategorySchema } from './interfaces/category.schema';
-import { PlayerSchema } from './interfaces/player.schema';
+import { CategorySchema } from './categories/interfaces/category.schema';
+import { PlayerSchema } from './players/interfaces/player.schema';
 import { CategoriesModule } from './categories/categories.module';
 import { PlayersModule } from './players/players.module';
 

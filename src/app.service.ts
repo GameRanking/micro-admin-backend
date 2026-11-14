@@ -1,8 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Category, UpdateCategory } from './interfaces/category.interface';
-import { Player } from './interfaces/player.interface';
+import { Category, UpdateCategory } from './categories/interfaces/category.interface';
+import { Player } from './players/interfaces/player.interface';
 import { RpcException } from '@nestjs/microservices';
 
 @Injectable()

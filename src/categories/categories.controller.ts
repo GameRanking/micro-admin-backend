@@ -10,11 +10,11 @@ import {
 import type {
     Category,
     UpdateCategory,
-} from '../interfaces/category.interface';
+} from './interfaces/category.interface';
 
 const ackErrors: string[] = ['E11000'];
 
-@Controller('categories')
+@Controller()
 export class CategoriesController {
     constructor(private readonly categoriesService: CategoriesService) {}
 
@@ -43,7 +43,7 @@ export class CategoriesController {
                     ? JSON.stringify(error.message)
                     : String(error);
             this.logger.error(
-                `error-create-category: ${JSON.stringify(message)}`,
+                `error (create-category): ${JSON.stringify(message)}`,
             );
 
             const filterAckErros = ackErrors.filter((ackError) =>
@@ -93,7 +93,7 @@ export class CategoriesController {
                     ? JSON.stringify(error.message)
                     : String(error);
             this.logger.error(
-                `error-update-category: ${JSON.stringify(message)}`,
+                `error (update-category): ${JSON.stringify(message)}`,
             );
             const filterAckErros = ackErrors.filter((ackError) =>
                 message.includes(ackError),

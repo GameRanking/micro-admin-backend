@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-import { Event } from './event.interface';
+import { Event } from '../../common/interfaces/event.interface';
 
 export interface Category extends Document {
     readonly category: string;
