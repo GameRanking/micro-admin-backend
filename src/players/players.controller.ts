@@ -66,7 +66,6 @@ export class PlayersController {
         const channel = context.getChannelRef();
         const originalMsg = context.getMessage();
         try {
-            console.log(`data: ${JSON.stringify(dataPayload)}`);
             const _id: string = dataPayload.id;
             const player: Player = dataPayload.updatePlayer;
 

@@ -37,7 +37,10 @@ export class PlayersService {
 
     async findPlayerById(_id: string): Promise<Player | null> {
         try {
-            return await this.playerModel.findOne({ _id }).exec();
+            return await this.playerModel
+                .findOne({ _id })
+                .populate('category')
+                .exec();
         } catch (error) {
             const message = errorInstance(error);
             this.logger.error(`error: ${JSON.stringify(message)}`);
