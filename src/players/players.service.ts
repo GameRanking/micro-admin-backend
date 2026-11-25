@@ -3,7 +3,7 @@ import { RpcException } from '@nestjs/microservices';
 import { Player } from './interfaces/player.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { errorInstance } from '../common/ErrorInstance';
+import { errorInstance } from '../common/utils/errorInstance';
 
 @Injectable()
 export class PlayersService {

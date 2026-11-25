@@ -5,9 +5,14 @@ import { CategoriesService } from './categories.service';
 import { CategorySchema } from './interfaces/category.schema';
 
 @Module({
-    imports:[MongooseModule.forFeature([{
-        name: 'categories', schema: CategorySchema
-    }])],
+    imports: [
+        MongooseModule.forFeature([
+            {
+                name: 'categories',
+                schema: CategorySchema,
+            },
+        ]),
+    ],
     controllers: [CategoriesController],
     providers: [CategoriesService],
 })

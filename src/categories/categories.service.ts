@@ -3,7 +3,7 @@ import { RpcException } from '@nestjs/microservices';
 import { Category, UpdateCategory } from './interfaces/category.interface';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { errorInstance } from '../common/ErrorInstance';
+import { errorInstance } from '../common/utils/errorInstance';
 
 @Injectable()
 export class CategoriesService {

@@ -8,7 +8,7 @@ import {
     Ctx,
 } from '@nestjs/microservices';
 import type { Player } from './interfaces/player.interface';
-import { errorInstance } from '../common/ErrorInstance';
+import { errorInstance } from '../common/utils/errorInstance';
 
 const ackErrors: string[] = ['E11000'];
 

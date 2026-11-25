@@ -1,10 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CategorySchema } from './categories/interfaces/category.schema';
-import { PlayerSchema } from './players/interfaces/player.schema';
 import { CategoriesModule } from './categories/categories.module';
 import { PlayersModule } from './players/players.module';
 
@@ -30,6 +27,5 @@ const createMongoOptions = (configService: ConfigService) => {
         PlayersModule,
     ],
     controllers: [AppController],
-    providers: [AppService],
 })
 export class AppModule {}
