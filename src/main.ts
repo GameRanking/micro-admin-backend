@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import moment from 'moment-timezone';
 
 const logger = new Logger('Main');
 
@@ -26,7 +27,11 @@ async function bootstrap() {
             },
         },
     );
-
+    Date.prototype.toJSON = function (): any {
+        return moment(this)
+            .tz('America/Sao_Paulo')
+            .format('YYYY-MM-DD HH:mm:ss.SSS');
+    };
     await app.listen();
     logger.log('Microservice is listening');
 }
